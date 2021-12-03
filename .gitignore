@@ -38,5 +38,3 @@ example.zip
 pipeline.yml
 prep/test/
 prep/.terraform/
-awstfspush
-./snapshot_tf_serverless.code-workspace
