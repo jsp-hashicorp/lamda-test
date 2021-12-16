@@ -17,7 +17,7 @@ provider "aws" {
 resource "aws_lambda_function" "example" {
    function_name = "ServerlessExample"
    # The bucket name as created earlier with "aws s3api create-bucket"
-   s3_bucket = "cisco-hashicorp-code-bucket"
+   s3_bucket = "jsp-lambda-code-bucket"
    #s3_key    = "v${var.code_version}/example.zip"
    # Remote state 사용을 위해 아래와 같이 수정
    s3_key    = "v${data.terraform_remote_state.lambda-app.outputs.code_version}/example.zip"
@@ -26,7 +26,7 @@ resource "aws_lambda_function" "example" {
    # is the name of the property under which the handler function was
    # exported in that file.
    handler = "main.handler"
-   runtime = "nodejs10.x"
+   runtime = "nodejs13.x"
 
    role = aws_iam_role.lambda_exec.arn
 }
