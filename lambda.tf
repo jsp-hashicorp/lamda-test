@@ -3,7 +3,7 @@ data "terraform_remote_state" "lambda-app" {
   backend = "remote"
 
   config = {
-    organization = "cisco-hashicorp"
+    organization = "snapshot_tf_serverless"
     workspaces = {
       name = "lambda-app"
     }
