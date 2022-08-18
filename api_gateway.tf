@@ -45,6 +45,8 @@ resource "aws_api_gateway_integration" "lambda_root" {
 }
 
 
+
+
 resource "aws_api_gateway_deployment" "example" {
   depends_on = [
     aws_api_gateway_integration.lambda,
