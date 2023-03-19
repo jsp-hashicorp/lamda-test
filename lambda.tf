@@ -17,7 +17,7 @@ provider "aws" {
 resource "aws_lambda_function" "example" {
    function_name = "ServerlessExample"
    # The bucket name as created earlier with "aws s3api create-bucket"
-   s3_bucket = "jsp-lambda-code-bucket"
+   s3_bucket = "jsp-lambda-code-bucket1"
    #s3_key    = "v${var.code_version}/example.zip"
    # Remote state 사용을 위해 아래와 같이 수정
    s3_key    = "v${data.terraform_remote_state.lambda-app.outputs.code_version}/example.zip"
@@ -34,7 +34,7 @@ resource "aws_lambda_function" "example" {
  # IAM role which dictates what other AWS services the Lambda function
  # may access.
 resource "aws_iam_role" "lambda_exec" {
-   name = "jsp-serverless_example_lambda"
+   name = "jsp-serverless_example_lambda1"
 
    assume_role_policy = <<EOF
 {
